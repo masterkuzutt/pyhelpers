@@ -8,8 +8,7 @@ def create_py_files(filepath, test_prefix='test',test_dir='tests'):
     _create_file(test_filepath)
 
 
-def _create_file(filepath ):
-
+def _create_file(filepath):
     if filepath.startswith('/') is True:
         raise ValueError(f"Can not create file from root: {filepath}")
 
@@ -27,6 +26,6 @@ def _create_file(filepath ):
     f.close()
 
 
-if __name__ == '__main__':
-    create_py_files(*sys.argv)
+def main():
+    create_py_files(*sys.argv[1:])
 
